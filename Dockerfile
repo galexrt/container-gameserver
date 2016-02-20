@@ -1,14 +1,20 @@
-FROM gliderlabs/alpine:3.3
+FROM fedora:23
 MAINTAINER Alexander Trost <galexrt@googlemail.com>
+
+ENV DATA_PATH="/data"
 
 ADD entrypoint.sh /entrypoint.sh
 
-RUN apk --no-cache add --update bash \
-        curl \
-        python \
-        python-dev \
-        glib \
-        libstdc++ && \
-    rm -rf /var/cache/apk/*
+RUN dnf -q upgrade -y && \
+    dnf install curl ca-certificates glibc.i686 libstdc++.i686 python python-dev \
+        curl && \
+    dnf clean all && \
+    rm -rf /var/lib/dnf/* \
+        /tmp/* \
+        /var/tmp/* \
+        /usr/share/locale/*
 
-ENTRYPOINT ["/entrypoint.sh"]
+VOLUME ["$DATA_PATH"]
+WORKDIR "$DATA_PATH"
+
+ENTRYPOINT ["/bin/sh"]
