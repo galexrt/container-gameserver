@@ -1,0 +1,16 @@
+FROM gliderlabs/alpine:3.3
+MAINTAINER Alexander Trost <galexrt@googlemail.com>
+
+ADD entrypoint-win.sh /entrypoint.sh
+
+RUN apk --no-cache add --update curl \
+        python \
+        python-dev \
+        glib \
+        libstdc++ \
+        wine \
+        winetricks \
+        xvfb && \
+    rm -rf /var/cache/apk/*
+
+ENTRYPOINT ["/bin/sh"]
