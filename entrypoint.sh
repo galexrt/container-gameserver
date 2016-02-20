@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
 # TODO
 
-exec /bin/sh "$@"
+exec /bin/bash "$@"

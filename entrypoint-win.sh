@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 Xvfb :0 -screen 0 800x600x16 &
 
@@ -6,4 +6,4 @@ Xvfb :0 -screen 0 800x600x16 &
 # xinit "$DATA_DIR" -- /usr/bin/Xvfb :0 -screen 0 800x600x16 -ac &
 
 export DISPLAY=:0.0
-exec /bin/sh "$@"
+exec /bin/bash "$@"

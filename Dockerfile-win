@@ -3,7 +3,8 @@ MAINTAINER Alexander Trost <galexrt@googlemail.com>
 
 ADD entrypoint-win.sh /entrypoint.sh
 
-RUN apk --no-cache add --update curl \
+RUN apk --no-cache add --update bash
+        curl \
         python \
         python-dev \
         glib \
