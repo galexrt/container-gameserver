@@ -17,4 +17,4 @@ RUN dnf -q upgrade -y && \
 VOLUME ["$DATA_PATH"]
 WORKDIR "$DATA_PATH"
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/entrypoint.sh"]
