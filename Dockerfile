@@ -6,7 +6,7 @@ ENV DATA_PATH="/data"
 ADD entrypoint.sh /entrypoint.sh
 
 RUN dnf -q upgrade -y && \
-    dnf install curl ca-certificates glibc.i686 libstdc++.i686 python python-dev \
+    dnf install curl ca-certificates glibc.i686 libstdc++.i686 python \
         curl && \
     dnf clean all && \
     rm -rf /var/lib/dnf/* \
