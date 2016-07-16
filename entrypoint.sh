@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# TODO
+cd "$DATA_PATH" || exit 1
 
-exec /bin/bash "$@"
+exec ./start.sh
