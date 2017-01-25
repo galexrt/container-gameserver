@@ -1,2 +1,2 @@
 # docker-gameserver
-Docker Image for running linux Gameservers.
+Docker Base Image for running linux Gameservers.
