@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:28
 LABEL maintainer="Alexander Trost <galexrt@googlemail.com>"
 
 ENV DATA_PATH="/data" TINI_VERSION="v0.18.0"
