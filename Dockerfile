@@ -9,7 +9,8 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 # problems reaching the public key infrastructure.
 RUN dpkg --add-architecture i386 && \
     apt update -y && \
-    apt install -y lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 libtcmalloc-minimal4:i386 && \
+    apt install -y libc6 lib32gcc1 lib32stdc++6 libstdc++6:i386 libcurl4-gnutls-dev:i386 \
+        lib32z1 lib32ncurses5 libtcmalloc-minimal4:i386 && \
     chmod +x /tini && \
     rm -rf /var/lib/apt/* \
         /tmp/* \
