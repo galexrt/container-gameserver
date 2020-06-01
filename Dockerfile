@@ -9,7 +9,7 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /
 # We are not gpg checking tini as of right now Docker Hub seems to "always" have
 # problems reaching the public key infrastructure.
 RUN dpkg --add-architecture i386 && \
-    apt update -y && \
+    apt update && \
     apt install -y gpg libc6 lib32gcc1 lib32stdc++6 libstdc++6:i386 libcurl4-gnutls-dev:i386 \
         lib32z1 lib32ncurses5 libtcmalloc-minimal4:i386 acl && \
     gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$TINI_KEY" || \
