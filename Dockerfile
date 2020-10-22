@@ -11,7 +11,7 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /
 RUN dpkg --add-architecture i386 && \
     apt update && \
     apt install -y gpg libc6 lib32gcc1 lib32stdc++6 libstdc++6:i386 libcurl4-gnutls-dev:i386 \
-        lib32z1 lib32ncurses5 libtcmalloc-minimal4:i386 acl && \
+        lib32z1 lib32ncurses5-dev lib32ncurses6 libtcmalloc-minimal4:i386 acl && \
     gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$TINI_KEY" || \
     gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$TINI_KEY" || \
     gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "$TINI_KEY" && \
