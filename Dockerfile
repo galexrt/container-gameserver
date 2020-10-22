@@ -1,7 +1,7 @@
-FROM debian:stretch
+FROM debian:buster
 LABEL maintainer="Alexander Trost <galexrt@googlemail.com>"
 
-ENV DATA_PATH="/data" TINI_VERSION="v0.18.0" TINI_KEY="595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7"
+ENV DATA_PATH="/data" TINI_VERSION="v0.19.0" TINI_KEY="595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7"
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /tini.asc
