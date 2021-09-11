@@ -1,4 +1,4 @@
-# docker-gameserver
+# container-gameserver
 
 Container Image for running (some) Gameservers easily in Containers, provided you already have the Gameservers ready and use this image just as a "containment".
 
